@@ -28,5 +28,3 @@ if __name__ == '__main__':
     traverseQueue(enqueue_stack, dequeue_stack)
     deQueue(enqueue_stack, dequeue_stack)
     traverseQueue(enqueue_stack, dequeue_stack)
-
-

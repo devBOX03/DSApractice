@@ -83,16 +83,20 @@ class LinkedList(object):
     def getNthNodeFromEnd(self, n):
         if self.head is None:
             return -1
-        slow_ptr = self.head
+            
+        slow_ptr = self.head2
         fast_ptr = self.head
         fast_ptr_pos = 0
+
         while fast_ptr != None:
             fast_ptr_pos += 1
             if fast_ptr_pos == n:
                 break
             fast_ptr = fast_ptr.next
+    
         if fast_ptr_pos < n:
             return -1
+
         while fast_ptr.next != None:
             slow_ptr = slow_ptr.next
             fast_ptr = fast_ptr.next
