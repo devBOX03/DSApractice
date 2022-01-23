@@ -87,3 +87,4 @@ if __name__ == '__main__':
     root.left.left = Node(30)
     print(inorderTraversal(root))
     print(isBST(root))
+
