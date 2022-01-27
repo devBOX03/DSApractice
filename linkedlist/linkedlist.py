@@ -239,3 +239,4 @@ if __name__ == '__main__':
     last_node.next = ll2.head
     # check loop again
     print("Loop exists: %s" % ll2.detectLoopInLinkedList())
+
