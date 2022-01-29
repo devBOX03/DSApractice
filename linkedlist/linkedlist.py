@@ -187,6 +187,26 @@ class LinkedList(object):
                 ptr2 = head1
 
         return None
+    
+    def isPalindrome(self):
+        if not self.head:
+            return False
+
+        current = self.head
+        slow_ptr = self.head
+        fast_ptr = self.head
+        while fast_ptr.next is not None:
+            slow_ptr = slow_ptr.next
+            fast_ptr = fast_ptr.next.next
+        
+        ll_end_ptr = self.reverseRecursively(slow_ptr.next)
+        while ll_end_ptr is not None:
+            if ll_end_ptr.data != current.data:
+                return False
+            ll_end_ptr = ll_end_ptr.next
+            current = current.next
+
+        return True
 
 if __name__ == '__main__':
     ll = LinkedList()
@@ -240,3 +260,9 @@ if __name__ == '__main__':
     # check loop again
     print("Loop exists: %s" % ll2.detectLoopInLinkedList())
 
+    # create linked list
+    ll3 = LinkedList()
+    ll3.insertNodeAtEnd("a")
+    ll3.insertNodeAtEnd("b")
+    ll3.insertNodeAtEnd("a")
+    print("Pallindrome Linked list: %s" % ll3.isPalindrome())
